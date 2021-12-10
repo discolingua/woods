@@ -1,11 +1,14 @@
 extends KinematicBody2D
 
-const ACCELERATION = 900
-const MAX_SPEED = 300
-const FRICTION = 500
+const ACCELERATION = 240
+const MAX_SPEED = 90
+const FRICTION = 180
 
 var velocity = Vector2.ZERO
 
+# delta is normally 1/60 (.0166667) at 60FPS
+# removing delta slows gameplay with frame drop (might be good?) but
+# completely changes the accelation / speed scale
 
 func _physics_process(delta):
 
@@ -19,11 +22,11 @@ func _physics_process(delta):
 	_i = _i.normalized()
 
 	if _i != Vector2.ZERO:
-		velocity += _i * ACCELERATION * delta
-		velocity = velocity.clamped(MAX_SPEED)
+		velocity = velocity.move_toward(_i * MAX_SPEED, ACCELERATION * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
-	move_and_collide(velocity * delta)
+	# move_and_slide already has delta factored in from the physics engine
+	move_and_slide(velocity)
 
 		
