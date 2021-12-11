@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 # onready var means there's less _ready() function needed
 onready var animPlayer = $AnimationPlayer
 onready var animTree = $AnimationTree
+onready var animState = animTree.get("parameters/playback")
 
 # delta is normally 1/60 (.0166667) at 60FPS
 # removing delta slows gameplay with frame drop (might be good?) but
@@ -33,9 +34,14 @@ func _physics_process(delta):
 
 		animTree.set("parameters/Idle/blend_position", _i)
 		animTree.set("parameters/Run/blend_position", _i)
+		
+		# update the current animation
+		animState.travel("Run")
 
 		velocity = velocity.move_toward(_i * MAX_SPEED, ACCELERATION * delta)
 	else:
+		animState.travel("Idle")
+		
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	# move_and_slide already has delta factored in from the physics engine
