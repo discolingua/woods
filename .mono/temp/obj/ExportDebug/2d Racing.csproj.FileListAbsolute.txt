@@ -1,0 +1,8 @@
+/Users/bunny/Development/godot/2d racing/.mono/temp/bin/ExportDebug/2d Racing.dll
+/Users/bunny/Development/godot/2d racing/.mono/temp/bin/ExportDebug/2d Racing.pdb
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.csprojAssemblyReference.cache
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.AssemblyInfoInputs.cache
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.AssemblyInfo.cs
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.csproj.CoreCompileInputs.cache
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.dll
+/Users/bunny/Development/godot/2d racing/.mono/temp/obj/ExportDebug/2d Racing.pdb
