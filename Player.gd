@@ -27,6 +27,6 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	# move_and_slide already has delta factored in from the physics engine
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 
 		
