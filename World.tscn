@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -54,6 +54,15 @@
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 88, 152, 80, 144, 72, 128, 80, 120, 88, 120, 104, 128, 104, 144 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 248, 200, 256, 192, 264, 184, 280, 200, 280, 216, 256, 216 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 64, 32, 88, 32, 96, 24, 88, 16, 72, 8, 64, 16 )
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -77,7 +86,13 @@ position = Vector2( 183, 176 )
 position = Vector2( -7, -8 )
 scale = Vector2( 1.17333, 0.813333 )
 texture = ExtResource( 5 )
+energy = 1.43
 mode = 3
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_gradient_length = 89.1
+shadow_filter = 3
+shadow_filter_smooth = 12.2
 
 [node name="Bush" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 88, 136 )
@@ -87,3 +102,12 @@ position = Vector2( 74, 23 )
 
 [node name="Bush3" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 264, 202 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource( 4 )
