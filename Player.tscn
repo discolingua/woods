@@ -5,8 +5,8 @@
 [ext_resource path="res://RunRight.tres" type="Animation" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 1.1
-height = 2.0
+radius = 0.749997
+height = 1.58334
 
 [sub_resource type="Animation" id=6]
 resource_name = "IdleDown"
@@ -206,7 +206,7 @@ states/Run/node = SubResource( 23 )
 states/Run/position = Vector2( 534.55, 91.965 )
 transitions = [ "Idle", "Run", SubResource( 24 ), "Run", "Idle", SubResource( 25 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -96.195, -23.955 )
+graph_offset = Vector2( -8.74499, -134.722 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
@@ -221,7 +221,7 @@ vframes = 4
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.5, 0 )
+position = Vector2( 3, 14 )
 rotation = 1.5708
 scale = Vector2( 8, 9 )
 shape = SubResource( 1 )
